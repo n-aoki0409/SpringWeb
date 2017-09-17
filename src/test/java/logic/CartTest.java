@@ -23,6 +23,18 @@ public class CartTest {
 		checkItemSet(cart.getItemList().get(0), 0, "testItem", 100 ,"テストです", null, null, 1);
 	}
 
+	/**
+	 * ItemSetを検証するメソッド
+	 * 
+	 * @param itemSet 登録されたItemSet
+	 * @param itemId itemId(期待値)
+	 * @param itemName itemName(期待値)
+	 * @param price price(期待値)
+	 * @param description description(期待値)
+	 * @param pictureUrl pictureUrl(期待値)
+	 * @param picture picture(期待値)
+	 * @param quantity quantity(期待値)
+	 */
 	private void checkItemSet(ItemSet itemSet, Integer itemId, String itemName, Integer price, String description, String pictureUrl, MultipartFile picture, Integer quantity) {
 		Assert.assertThat(itemSet.getItem().getItemId(), is(itemId));
 		Assert.assertThat(itemSet.getItem().getItemName(), is(itemName));
@@ -32,6 +44,17 @@ public class CartTest {
 		Assert.assertThat(itemSet.getQuantity(), is(quantity));
 	}
 
+	/**
+	 * Item作成メソッド
+	 * 
+	 * @param itemId
+	 * @param itemName
+	 * @param price
+	 * @param description
+	 * @param pictureUrl
+	 * @param picture
+	 * @return 作成されたItem
+	 */
 	private Item createItem(Integer itemId, String itemName, Integer price, String description, String pictureUrl, MultipartFile picture) {
 		Item item = new Item();
 		item.setItemId(itemId);
