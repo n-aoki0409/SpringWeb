@@ -9,7 +9,7 @@ import org.junit.Test;
 public class CartTest {
 
 	@Test
-	public void 初期状態_itemListが空リストであること() {
+	public void getItemList_初期状態_itemListが空リストであること() {
 		Assert.assertThat(new Cart().getItemList().size(), is(0));
 	}
 }
